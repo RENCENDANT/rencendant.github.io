@@ -1,0 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 10px;
+    background: -webkit-gradient(linear, left bottom, right top, from(#289ad5), to(#9865d7));
+    color: white;
+}
