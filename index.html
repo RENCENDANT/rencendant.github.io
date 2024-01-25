@@ -2,12 +2,47 @@
 
 <html lang="en">
     <head>
-        <title>Terence Carrera - github.io</title>
+        <title>Terence Carrera (rencendant)</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="description" content="Your Name's Portfolio">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
         <link rel="stylesheet" href="/css/style.css">
     </head>
 
-    <body>
+    <body class="container mx-auto text-center">
+        <span id="typing"></span>
+
+        <div id="accounts" class="social-media-links">
+            <a href="https://www.facebook.com/rencendant" class="btn btn-link bg-white" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.twitter.com/rencendant" class="btn btn-link bg-white" target="_blank"><i class="bi bi-twitter"></i></a>
+            <a href="https://www.github.com/rencendant" class="btn btn-link bg-white" target="_blank"><i class="bi bi-github"></i></a>
+        </div>
+        
+        <script>
+            function typeWriter(text, element) {
+                let socials = document.getElementById('accounts');
+                let i = 0;
+                const speed = 75;
+                
+                function typing() {
+                    if (i < text.length) {
+                        element.innerHTML += text.charAt(i);
+                        i++;
+                        setTimeout(typing, speed);
+                    } else {
+                        socials.classList.add('fade-in');
+                        i = 0;
+                        element.innerHTML = '';
+                        typing();
+                    }
+                }
+                typing();
+            }
+
+            const element = document.getElementById('typing');
+            typeWriter('This portfolio is under construction as I gather experiences. You may contact me on my social media accounts for more information.', element);
+            
+        </script>
     </body>
 </html>
