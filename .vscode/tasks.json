@@ -1,0 +1,42 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Watch TailwindCSS",
+            "type": "shell",
+            "command": "cd",
+            "args": [
+                "${workspaceFolder}",
+                "&&",
+                "npx",
+                "tailwindcss",
+                "-i",
+                "./${input:inputFile}",
+                "-o",
+                "./${input:outputFile}",
+                "--watch"
+            ],
+            "problemMatcher": "$tsc-watch"
+        }
+    ],
+    "inputs": [
+        {
+            "type": "pickString",
+            "id": "inputFile",
+            "description": "Pick CSS File for Input",
+            "options": [
+                "css/style.input.css"
+            ]
+        },
+        {
+            "type": "pickString",
+            "id": "outputFile",
+            "description": "Pick CSS File for Output",
+            "options": [
+                "css/style.output.css"
+            ]
+        }
+    ]
+}
